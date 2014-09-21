@@ -9,6 +9,15 @@
     margin-right: auto;
     font-size: 20px;
 }
+#footer {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #444444;
+}
 div.code {
     font-family: courier, monospace;
     font-size: 16px;
@@ -86,27 +95,57 @@ div.change {
   <li>Increment/decrement operators</li>
 </ul>
 
-<h3>Primitive Data Types</h3>
+<h3>Pre- and Post- Increment/Decrement Operators</h3>
 
-<p>In addition to numeric data types below, Java provides also <b>char</b> and <b>boolean</b> <em>primitive data types</em>..
+<p>Order of operations is important: ()^*/+-.
+  Parentheses <b>almost</b> always take precedence. Exception being ++
+  and -- </p>
+
+<div class="code"><pre>
+  int k = 5;
+  int j = 1 + ++k;
+  int n = 1 + k--;
+</pre></div>
+
+<img src="incdec_operators.png" /> <br/>
 
 <h3>Numeric Data Types</h3>
-<img src="numeric.png"> <br/>
+<img src="numeric.png" /> <br/>
 
-<h3>Data Casting and Coversion</h3>
+<h3>Primitive Data Types</h3>
+
+<p>In addition to numeric data types, Java provides also <b>char</b>
+  and <b>boolean</b> <em>primitive data types</em>. Bottom line: you cannot breakdown primitive datatypes.</p>
+
+<h3>Data Casting and Conversion</h3>
 
 <p>With Java, you can reduce or increase the precision of a number.</p>
 
-<h2>Lab Exercises Using Eclispe</h2>
+<div class="code"><pre>
+   double p = 3.14;
+   int k = (int) p;
+</pre></div>
+
+<p>Also be careful with integer arithmetics.  What is the value of p?</p>
+
+<div class="code"><pre>
+   double p = 5/2;
+</pre></div>
+
+<h2>Lab Exercises</h2>
+
 <p>For each of the following exercise, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li>Write a program that will ask the users for three numbers and display the average of thes numnbers</li>
-  <li>Write a program that inputs a dog's age from the console and display the age equivalent in human years. </li> 
+  <li>Write a program that will ask the users for three numbers and display the average of these numbers.</li>
+  <li>Write a program that inputs a dog's age from the console and display the age equivalent in human years.</li> 
 </ol>
 
-
-
 </div>
+
+<div id="footer">
+All illustrations are courtesy of Y. Daniel Liang's <em>Introduction to Java Programming, 10e</em>.
+</div>
+
 </body>
 </html>
