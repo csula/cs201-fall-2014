@@ -11,22 +11,122 @@
 
 <h1>CS201: Introduction to Programming</h1>
 
-<h2>Lecture xx</h2>
+<h2>Lecture 03</h2>
 
-<p>Reading assignment: chapter xxx</p>
+<p>Reading assignment: chapter 3</p>
 
 <h3>Lesson Objectives</h3>
 <ul>
-  <li></li>
+  <li> To declare boolean variables and write Boolean expressions using relational operators </li>
+  <li>To implement selection control using one-way if statements</li>
+  <li>To implement selection control using two-way if-else statements</li>
+  <li>To implement selection control using nested if and multi-way if statements</li>
+  <li>To generate random numbers using the Math.random() method </li>
+  <li>To combine conditions using logical operators (!, &&, ||, and ^)</li>
+  <li>To implement selection control using switch statements</li>
+  <li>To write expressions using the conditional expression</li>
+  <li>To examine the rules governing operator precedence and associativity</li>
+  <li>To apply common techniques to debug errors</li>
 </ul>
 
+<h3>Decision Making</h3>
+
+<p>We need to make a decision with our program. <b>If</b> decision
+  amounts to one of two values: true or false.</p>
+
+<div class="code"><pre>
+if ( ... ) {
+
+}
+</pre></div>
+
+
+<img src="relational_operators.png" />
+
+<p>Evaluation of complex operations can always be reduced down to one
+  of two states.  Furthermore, we can "embed" operations into a single
+  clause and evaluate their result.</b>
+
+<img src="quiz.png" />
+
+<h3>if-else</h3>
+
+<p> <b>if-else</b> allows for us to make more complex decisions: </p>
+
+<div class="code"><pre>
+if ( ... ) {
+
+} else {
+
+}
+</pre></div>
+
+<p>Yet even more complex:</p>
+
+<div class="code"><pre>
+if ( ... ) {
+
+} else if ( ...)  {
+
+} else {
+
+}
+</pre></div>
+
+<p>Please be careful in how you nest your <b>if-else</b> conditions.
+  Things can get out of hand rather quickly and, sadly, at times this
+  can lead to unreadable code; even worse, introduce logic errors! </p>
+
+<h3>Random number generator</h3>
+
+<p>To generate a random number in Java, it's simple:</p>
+
+<div class="code"><pre>
+int v = (int)(Math.random() * 6);
+</pre></div>
+
+<p>What is the value of <em>v</em>? </p>
+
+<h3>Logic Operators</h3>
+
+<p>Logical operators are mathematically-based boolean operations that
+  evalue logc and yield a single truth value.  This truth value can
+  either be <em>true</em> or <em>false</em>. </p>
+
+<img src="boolean_operators.png" />
+
+<p><b>order of operations </b></p>
+
+<img src="order.png" />
+
+<h3>switch statements</h3>
+
+<p><b>switch</b> statements are useful for complex
+  (cumbersome) <b>if-else</b> sitautions.</p>
+
+
+<div class="code"><pre>
+switch( v ) {
+  case 0: 
+      /* actions */
+      break;
+   case 1:
+      /* actions */
+      break;
+   default:
+      /* all else ... */     
+}
+</pre></div>
 
 <h2>Lab Exercises</h2>
 
 <p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li></li> 
+  <li>Write a program that generates 4 random numbers between 1 and 10, displays numbers and their average.</li> 
+  <li>Write a program that ask a user for his/her age.  Based on the age, displays the stage of life: <b>infant</b>, <b>toddler</b>, <b>kid</b>, <b>teenage</b>, <b>adult</b> or <b>senior citizen</b>.
+  <li>Write a progam that prints out the y-intercept and the slope for this function: <em> 2x - 2y = 10</em>.
+  <li>Write a program that inputs the cost of an item (double-precision) and prints the same number as a fraction</li>
 </ol>
 
 </div>
