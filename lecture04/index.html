@@ -11,14 +11,135 @@
 
 <h1>CS201: Introduction to Programming</h1>
 
-<h2>Lecture xx</h2>
+<h2>Lecture 4</h2>
 
-<p>Reading assignment: chapter xxx</p>
+<p>Reading assignment: chapter 4</p>
 
 <h3>Lesson Objectives</h3>
 <ul>
-  <li></li>
+  <li>To solve mathematical problems by using the methods in the Math class</li>
+  <li>To represent characters using the char type</li>
+  <li>To encode characters using ASCII and Unicode</li>
+  <li>To represent special characters using the escape sequences</li>
+  <li>To cast a numeric value to a character and cast a character to an integer</li>
+  <li>To compare and test characters using the static methods in the Character
+class</li>
+  <li>To introduce objects and instance methods</li>
+  <li>To represent strings using the String object</li>
+  <li>To return the string length using the length() method</li>
+  <li>To return a character in the string using the charAt(i) method</li>
+  <li>To use the + operator to concatenate strings</li>
+  <li>To return an uppercase string or a lowercase string and to trim a string</li>
+  <li>To read strings from the console</li>
+  <li>To read a character from the console</li>
+  <li>To compare strings using the equals method and the compareTo methods</li>
+  <li>To obtain substrings</li>
+  <li>To find a character or a substring in a string using the indexOf method</li>
+  <li>To format output using the System.out.printf method</li>
 </ul>
+
+<h3>Mathematical Functions</h3>
+
+<p>Common mathematical functions are provided with the <b>Math</b> class.  To use its members functions, just type <b>Math.</b> and a list of available methods will be displayed.</p>
+
+<img src="trig.png"><br/>
+
+<img src="exponent.png"><br/>
+
+<img src="rounding.png"><br/>
+
+<h3>Compute Angles Example</h3>
+
+<p>Let consider the following for computing the angles of a triangle:</p>
+
+<img src="triangle.png"><br/>
+
+<p>This program does the above computations:</p>
+
+<img src="computeangle.png"><br/>
+
+<h3>Character</h3>
+
+<p>A <b>char</b> type is a primitive datatype that represents a single character.</p>
+
+
+<h3>Character</h3>
+
+<p>A <b>char</b> type is a primitive datatype that represents a single character.</p>
+
+<p>Unicode is of this format: <b>\uXXYY</b> where XX is the first hex set and YY is the second hex set.</b>
+
+<p>Java (like C/C++) supports escape sequences which begins with '\' and followed by a special character or a unicode sequence.</p>
+
+<img src="escape.png"><br/>
+
+<p>Character casting is similar to other casting constructs.  "Precision" will be lost -- in other words only the first 16 bits are retained.</p>
+
+<p>To do various testing the state of a character, a <b>Character</b> class is used.  For example, to test if a character is uppercase: <b>Character.isUpperCase(c)</b> will return a <em>true</em> if c is an uppercase character. Likewise for conversion, we use <b>Character.toUpper(c)</b>.</p>
+
+<img src="chartesting.png" /> <br/>
+
+<h3>Java Strings</h3>
+
+<p>A string is a sequence of characters.</p>
+
+<div class=code><pre>
+  String message = "java is fun!";
+</pre></div>
+
+<p>You can also manipulate a <b>String</b> using its member methods. </p>
+
+<img src="strings.png" /><br/>
+
+<p>Java provides concatenation operator (+) that you can use directly on a string.  For example: </p>
+
+<div class=code><pre>
+  String message = "java is fun!";
+  String m2 = message + " way too much fun!";
+</div>
+
+<p>When concatenating a number (integer, float, double, etc) with a string that number is converted to a string.</p>
+
+<div class=code><pre>
+  String message = "a number is " + 2;
+</div>
+
+<p>Similar to Character class, you can manipulate a String object. </p>
+
+<div class=code><pre>
+  String k = "number".toUpperCase();
+</div>
+
+<p>To read a string from the console, we have two options: </p>
+
+<ol>
+  <li> To read one word at a time </li>
+  <li> To read the entire line at once</li>
+</ol>
+
+<div class=code><pre>
+   Scanner s = new Scanner(System.in);
+   String k = s.next();
+   String l = s.nextLine();
+</pre></div>
+
+<p>To compare strings, you must use the string's compare methods.  Note that you cannot compare using the "==" operator.</p>
+
+<img src="stringcompare.png" /> <br/>
+
+<p>You can also get part of a string with the <b>substring(...)</b> method</p>
+
+<div class=code><pre>
+String message = "Welcome to Java";
+String message = message.substring(0, 11) + "HTML"; 
+</pre></div>
+
+<p>If you have a number that is encoded as a String, you can use it respective Class to do the conversion.</p>
+
+<div class=code><pre>
+   int k = Integer.parseInt("1" + "2");
+   double j = Integer.parseInt("1.0" + "2");
+</pre></div>
 
 
 <h2>Lab Exercises</h2>
@@ -26,7 +147,8 @@
 <p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li></li> 
+  <li>Write the Java code to detect if a word is capitalized.</li> 
+  <li>Write the Java code to replace all "." with ";" in a line of text.</li>
 </ol>
 
 </div>
