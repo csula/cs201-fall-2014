@@ -2,8 +2,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>CS201: Introduction to Programming</title>
-<!-- css -->
-<link rel="stylesheet" href="../css/style.css">
+  <!-- css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
 </head>
 <body>
 
@@ -27,9 +39,7 @@
   <li>To write nested loops</li>
   <li>To learn the techniques for minimizing numerical errors</li>
   <li>To implement program control with break and continue</li>
-  <li>To process characters in a string using a loop in a case study for check-
-ing palindrome</li>
-  <li>To write a program that displays prime numbers</li>
+  <li>To process characters in a string using a loop in a case study for checking palindrome</li>
 </ul>
 
 
@@ -39,13 +49,106 @@ ing palindrome</li>
 
 <h3>While Loop</h3>
 
+<p>A while loop is the most basic looping structure.  It is consisted of a "stopping" or "termination" conditon and loop body.  The loop body will continue to to execute as long as the <em>loop-continuation-condition</em> is <b>true</b>.</p>
+
+<div class="code"><pre>
+while (loop-continuation-condition) { 
+  // Loop body
+  Statement(s);
+}
+</pre></div>
+
+<p>What does a flow of the <em>whilte</em> look like?</p>
+
+<img src="whileflowchart.png" /> <br/>
+
+<p>Let us write a simple number guessing game:</p>
+
+<ol>
+  <li>Computer: I am thinking of a number between 1 and 10</li>
+  <li>Player: is it 4?</li>
+  <li>Computer: Higher</li>
+  <li>Player: is it 8?</li>
+  <li>Computer: Lower</li>
+  <li>Player: is it 6?</li>
+  <li>Computer: Lower</li>
+  <li>Player: is it 5?</li>
+  <li>Computer: You've got it!</li>
+</ol>
+
+<p>Can we write this program without a loop construct?  Not easily.  So let us come up with a strategy.</p>
+
+<ol>
+  <li> Identify the statements that need to be repeated</li>
+  <li> Wrap these statements in a loop between the the "{" and "}"</li>
+  <li> Code the loop-continuation-condition. In other words, determine when are you "done"</li>
+</ol>
+
+<p>Another approach to controlling the loop termination logic is: special input value, known as a <em>sentinel value</em>, signifies the end of the input. A loop that uses a sentinel value to control its execution is called a <em>sentinel-controlled loop</em>.</p>
+
+<h3>The do-while loop</h3>
+
+<p>The do-while loop is very similar to that of a while loop except that you can guarantee execution of the loop body <em>at least once</em>.</p>
+
+<div class="code"<pre>
+do {
+   // Loop body; 
+   Statement(s);
+} while (loop-continuation-condition);
+</pre></div>
+
+<h3>The for loop</h3>
+
+<p>With the while loop, you typically do not know how many times to execute something.  Hence do something while some state is true.  What if you know execute how many iterations is required?</p>
+
+<p>The syntax for a <b>for</b> loop is very structured: </p>
+
+<div class="code"><pre>
+for (initial-action; 
+     loop-continuation-condition; 
+     action-after-each-iteration) {
+    // Loop body;
+    Statement(s);
+}
+</pre></div>
+
+<p>The flowchar for a for loop is similar to that of a while loop:</p>
+
+<img src="forloopflow.png" /> <br/>
+
+<p>What are some of the advantages of a for loop over a while loop? The bigger question is what and when to use a particular loop?</p>
+
+<h3>Nested Loops</h3>
+
+<p>You can nest loops within another loops. For example: </p>
+
+<div class="code"><pre>
+for (int i = 1; i <= 10; i++) {
+  for (int j = 1; j <= 10; j++) {
+     System.out.printf("%3d ", i * j);
+  }
+  System.out.println("");
+}
+</pre></div>
+
+<h3>Break and Continue keywords</h3>
+
+<p>There are additional controls over loops flow: </p>
+
+<ul>
+  <li> <b>break</b>: stop execution and exit the loop (or exit the switch statement)</li>
+  <li> <b>continue</b>: stop execution and return to the loop-continuation-condition</li>
+</ul>
 
 <h2>Lab Exercises</h2>
 
 <p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li></li> 
+  <li>Modify the number guessing game so that the player can only have three changes at guessing the right number.</li> 
+  <li>Write a program that determines if a string is a palindrome.</li>
+  <li>Write a program that reads a the contents of a matrix $M$.</li>
+  <li>Write a program that scales matrix $M$ by 0.05.</li>
 </ol>
 
 </div>
