@@ -19,6 +19,7 @@ Bananas
 1 piece
 Greek Yogur
 10 ounces
+==end==
 ```
 
 You will feed the above ingredient list into your recipe program with this command:
@@ -35,8 +36,9 @@ Strawberries (kg)	5		1.0		2.5
 Bananas (piece)		1		2		5
 Greek Yogurt (ounces)	10		20		50
 ```
-
 A couple of notes: (1) a line is ignored if it begins with a hashtag `#`, (2) unlike homework 1, you no longer specify the number of people, (3) you should use the <b>System.out.printf(...)</b> method (this will require a little bit of experimentation before you'd get correct.
+
+Finally pay attention to the sentinel key `==end==` to denote the end of the ingredient listing.
 
 # Homework 1
 
