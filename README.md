@@ -31,10 +31,10 @@ java -jar hw2.jar < ingredient.txt
 And your program will print a simple shopping table in this format:
 
 ```
-Ingredient		1 (person)	2 (persons)	5 (persons)
-Strawberries (kg)	5		1.0		2.5
-Bananas (piece)		1		2		5
-Greek Yogurt (ounces)	10		20		50
+Ingredient              1 (person)      2 (persons)     5 (persons)
+Strawberries (kg)       5               1.0             2.5
+Bananas (piece)         1               2               5
+Greek Yogurt (ounces)   10              20              50
 ```
 A couple of notes: (1) a line is ignored if it begins with a hashtag `#`, (2) unlike homework 1, you no longer specify the number of people, (3) you should use the <b>System.out.printf(...)</b> method (this will require a little bit of experimentation before you'd get correct.
 
