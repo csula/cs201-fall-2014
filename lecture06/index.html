@@ -11,22 +11,187 @@
 
 <h1>CS201: Introduction to Programming</h1>
 
-<h2>Lecture xx</h2>
+<h2>Lecture 06 / Methods</h2>
+<p>Reading assignment: chapter 6</p>
 
-<p>Reading assignment: chapter xxx</p>
-
-<h3>Lesson Objectives</h3>
+<h2>Lesson Objectives</h2>
 <ul>
-  <li></li>
+  <li>To define methods with formal parameters </li>
+  <li>To invoke methods with actual parameters (i.e., arguments) </li>
+  <li>To define methods with a return value </li>
+  <li>To define methods without a return value </li>
+  <li>To pass arguments by value </li>
+  <li>To develop reusable code that is modular, easy to read, easy to debug, and easy to maintain </li>
+  <li>To use method overloading and understand ambiguous overloading</li>
+  <li>To determine the scope of variables </li>
+  <li>To apply the concept of method abstraction in software development </li>
+  <li>To design and implement methods using stepwise refinement </li>
 </ul>
 
+<h3>Introduction</h3>
+
+<p>Purpose of methods: Methods can be used to define reusable code and organize and simplify coding.</p>
+
+<img src="methods.png" /><br/>
+
+<div class="code"><pre>
+
+modifier returnValueType methodName(list of parameters) {
+    // Method body;
+}
+
+</pre></div>
+
+<img src="definition.png" /><br/>
+
+<p> When a program calls a method, program control is transferred to the called method. A called method returns control to the caller when its return statement is executed or when its method-ending closing brace is reached.</p>
+
+<p>Consider the following method for computing the max (larger) of two numbers.</p>
+
+<img src="max.png" /><br/>
+
+<p>When the max method is invoked, the flow of control transfers to it. Once the max method is finished, it returns control back to the caller.</p>
+
+<img src="flowcontrol.png" /><br/>
+
+<p>What's happening underneath the hood?</p>
+
+<ul>
+  <li>Each time a method is called, the JVM creates an <em>activation</em> frame or record that takes a "snapshot" of the states of the variables </li>
+  <li>This data frame is push onto a stack</li>
+  <li>If another method is invoked another frame is created and again pushed on to the stack</li>
+  <li>When the program returns from a method, the frame is popped off the stack and data is "restored"</li>
+</ul>
+
+<img src="frame.png" /><br/>
+
+<h4>The void Method</h4>
+
+<p>The so-called void method does not return anything.  Purpose: do something but but "result" is not needed.  In practice, people do abuse the void method by passing values by reference (more on this in CS202).</p>
+
+<h3>Passing arguments</h3>
+
+<p>There are two ways to passing arguments to a method: </p>
+
+<ol>
+  <li>Passing by values</li>
+  <li>Passing by reference (more on this in CS202)</li>
+</ol>
+
+<h4>Passing by Value</h4>
+
+<p>Consider the following code: </p>
+
+<div class="code"><pre>
+public class SwapNumber {
+  public static void main(String[] args) {
+    int a = 2;
+    int b = 3;
+    System.out.printf("a = %d, b = %d\n", a, b);
+    Swap(a,b);
+    System.out.printf("a = %d, b = %d\n", a, b);
+  }
+
+  public static void Swap(int x, int y) {
+    int temp = a;
+    a = b;
+    b = temp;
+  }
+}
+</pre></div>
+
+<p>What does the output look like?</p>
+
+<h3>Modularization</h3>
+
+<p>Modularizing makes the code easy to maintain and debug and enables the code to be reused.  Methods can be used to reduce redundant code and enable code reuse. Methods can also be used to modularize code and improve the quality of the program.</p>
+
+<p>Let's write the code to find the greatest commond divisor:</p>
+
+<div class="code"><pre>
+public class GCD { 
+
+  public static int gcd(int n1, int n2) {
+     int gcd = 1;
+     int k = 2;
+     while (k <= n1 && k <= n2) {
+        if (n1 % k == 0 && n2 % k == 0) {
+           gcd = k;
+        }
+     }
+
+     return gcd;
+  }
+}
+</pre></div>
+
+<p>Benefits of encapsulating GCD as a reusable task:</p>
+
+<ol>
+  <li> It isolates the problem for computing the gcd from the rest of the code in the main method. Thus, the logic becomes clear and the program is easier to read.</li>
+  <li> The errors on computing the gcd are confined in the gcd method, which narrows the scope of debugging.</li>
+  <li> The gcd method now can be reused by other programs.</li>
+</ol>
+
+<h3>Overloading</h3>
+
+<p>Overloading methods enables you to define the methods with the same name as long as their signatures are different.  Let's modify the max method:</p>
+
+<div class="code"><pre>
+public class Max {
+
+  public static double max(double n1, double n2) {
+    return (n1 > h2 ? n1 : n2);
+  }
+
+  public static int max(int n1, int n2) {
+    return (n1 > h2 ? n1 : n2);
+  }
+}
+</pre></div>
+
+<p>This is called overloading because <b>max(...)</b> can execute either of the two methods depending, of course, on the parameter type.</p>
+
+<p>Sometimes there are two or more possible matches for the invocation of a method, but the compiler cannot determine the best match. This is referred to as ambiguous invocation. Ambiguous invocation causes a compile error. Consider the following code:</p>
+
+<div class="code"><pre>
+public class AmbiguousOverloading {
+
+  public static void main(String[] args) {
+    System.out.println(max(1, 2)); 
+  }
+ 
+  public static double max(int num1, double num2) { 
+    if (num1 > num2)
+       return num1; 
+    else
+       return num2; 
+  }
+ 
+  public static double max(double num1, int num2) { 
+    if (num1 > num2)
+       return num1; 
+    else
+       return num2; 
+  }
+}
+
+</pre></div>
+
+<h3>Scope of Variables</h3>
+
+<p>The scope of a variable is the part of the program where the variable can be referenced.  To put it differently, "scope" is where the variable exists.</p>
+
+<img src="scope.png" /><br/>
 
 <h2>Lab Exercises</h2>
 
 <p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li></li> 
+  <li>Modify our earlier program to test for palindrome by using methods.</li> 
+  <li>Update the homework assignment by breaking down the program into smaller chunks.</li> 
+  <li>Write a java program with "intelligent" overloading methods that can understands the differences between adding "1.0" + "2.0" and 1.0 + 2.0</li>
 </ol>
 
 </div>
