@@ -9,7 +9,15 @@ For this class, the homework assignment will be a recipe generator.  Each week, 
 
 # Homework 3
 
-It's pretty clear that an unorganized shopping list makes it really hard to shop.  Your recipe generator now needs to do some.
+It's pretty clear that an unorganized shopping list makes it really hard to shop.  Your recipe generator will now need to sort the output by ingredients.  So the output would be as followed
+
+```
+Ingredient              1 (person)      2 (persons)     5 (persons)
+Bananas (piece)         1               2               5
+Greek Yogurt (ounces)   10              20              50
+Strawberries (kg)       5               1.0             2.5
+```
+
 
 # Homework 2
 
