@@ -3,7 +3,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>CS201: Introduction to Programming</title>
 <!-- css -->
-<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
 </head>
 <body>
 
@@ -11,14 +23,176 @@
 
 <h1>CS201: Introduction to Programming</h1>
 
-<h2>Lecture xx</h2>
+<h2>Lecture 7 / Single Dimensional Array</h2>
+<p>Reading assignment: chapter 7</p>
 
-<p>Reading assignment: chapter xxx</p>
-
-<h3>Lesson Objectives</h3>
+<h2>Lesson Objectives</h2>
 <ul>
-  <li></li>
+  <li>To describe why arrays are necessary in programming </li>
+  <li>To declare array reference variables and create arrays </li>
+  <li>To obtain array size using arrayRefVar.length and know default values in an array </li>
+  <li>To access array elements using indexes </li>
+  <li>To declare, create, and initialize an array using an array initializer </li>
+  <li>To program common array operations (displaying arrays, summing all elements, finding the minimum and maximum elements, random shuffling, and shifting elements) </li>
+  <li>To simplify programming using the for each loops </li>
+  <li>To apply arrays in application development (AnalyzeNumbers,
+DeckOfCards) </li>
+  <li>To copy contents from one array to another </li>
+  <li>To develop and invoke methods with array arguments and return values </li>
+  <li>To define a method with a variable-length argument list </li>
+  <li>To search elements using the linear or binary search algorithm </li>
+  <li>To sort an array using the selection sort approach </li>
+  <li>To use the methods in the java.util.Arrays class </li>
+  <li>To pass arguments to the main method from the command line </li>
 </ul>
+
+<h3>Introduction</h3>
+
+<p>A single array variable can reference a large collection of data.  Java and most other high-level languages pro- vide a data structure, the array, which stores a fixed-size sequential collection of elements of the same type.</p>
+
+<p>Once an array is created, its size is fixed. An array reference variable is used to access the elements in an array using an index.</p>
+
+<div class="code"><pre>
+Integer[] k = new Integer[5];
+</pre></div>
+
+<p>In the above code snippet, we declare that $k$ is a reference variable to an array of Integers.  It also creates array of 5 Integer objects. To use the array: </p>
+
+<div class="code"><pre>
+k[0] = 1;
+k[1] = 2;
+k[2] = 3;
+k[3] = 4;
+l[4] = 1000;
+</pre></div>
+
+<h4>Array Initializer</h4>
+
+<p>Java has a shorthand notation, known as the array initializer, which combines the declaration, creation, and initialization of an array in one statement using the following syntax:</p>
+
+<div class="code"><pre>
+double[] d = { 1.0, 2.0, 3.0 } ;
+</div>
+
+<h4>Array Processing</h4>
+
+<p>Since array size is known, it's natural (and perhaps obvious) to a <b>for</b> construct.</p>
+
+<div class="code"><pre>
+double[] d = new double[10];
+for (int i = 0; i < 10) {
+  d[i] = 1.0 * i;
+}
+</div>
+
+<p>Here are a number of patterns on how array are used:</p>
+
+<p>Initializing arrays with input values: The following loop initializes the array myList with user input values.</p>
+
+<div class="code"></pre>
+java.util.Scanner input = new java.util.Scanner(System.in); 
+System.out.print("Enter " + myList.length + " values: "); 
+for (int i = 0; i < myList.length; i++) {
+  myList[i] = input.nextDouble();
+}
+</pre></div>
+
+<p>Initializing arrays with random values: The following loop initializes the array myList with random values between 0.0 and 100.0, but less than 100.0.</p>
+
+<div class="code"></pre>
+for (int i = 0; i < myList.length; i++) { 
+  myList[i] = Math.random() * 100;
+}
+</pre></div>
+
+<p>Displaying arrays: To print an array, you have to print each element in the array using a loop like the following:</p>
+
+<div class="code"><pre>
+for (int i = 0; i < myList.length; i++) { 
+  System.out.print(myList[i] + " ");
+}
+</pre></div>
+
+<p>Summing all elements: Use a variable named total to store the sum. Initially total is 0. Add each element in the array to total using a loop like this:</p>
+
+<div class="code"><pre>
+double total = 0;
+for (int i = 0; i < myList.length; i++) {
+  total += myList[i];
+}
+</pre></div>
+
+<p>Finding the largest element: Use a variable named max to store the largest element. Initially max is myList[0]. To find the largest element in the array myList, compare each element with max, and update max if the element is greater than max.</p>
+
+<div class="code"><pre>
+double max = myList[0];
+for (int i = 1; i < myList.length; i++) {
+  if (myList[i] > max) max = myList[i];
+}
+</pre></div>
+
+<p>Finding the smallest index of the largest element: Often you need to locate the largest element in an array. If an array has multiple elements with the same largest value, find the smallest index of such an element.</p>
+
+<div class="code"><pre>
+double max = myList[0];
+int indexOfMax = 0;
+for (int i = 1; i < myList.length; i++) {
+  if (myList[i] > max) { 
+    max = myList[i]; indexOfMax = i;
+  } 
+}
+</pre></div>
+
+<p>Random shuffling: In many applications, you need to randomly reorder the elements in an array.</p>
+
+<div class="code"><pre>
+for (int i = myList.length - 1; i > 0; i--) {
+ ￼int j = (int)(Math.random() * (i + 1));
+  double temp = myList[i]; 
+  myList[i] = myList[j]; 
+  myList[j] = temp;
+}
+</pre></div>
+
+<p>Shifting elements: Sometimes you need to shift the elements left or right. Here is an example of shifting the elements one position to the left and filling the last element with the first element:</p>
+
+<div class="code"><pre>
+double temp = myList[0];
+for (int i = 1; i < myList.length; i++) { 
+  myList[i - 1] = myList[i];
+}
+myList[myList.length - 1] = temp;
+</pre></div>
+
+<p>Simplifying coding: Arrays can be used to greatly simplify coding for certain tasks.</p>
+
+<div class="code"><pre>
+String[] dayOfTheWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+int d = (int)(Math.Random() * 7);
+String randomDay = dayOfTheWeek[d];
+</div>
+
+<h4>Foreach Loop</h4>
+
+<p>When you do not need to worry about the index position of an array, use the "Foreach" loop.</p>
+
+<div class="code"><pre>
+for (double e: myList) { 
+  System.out.println(e);
+}
+</pre></div>
+
+<!--
+<h4>Variable Length Array List</h4>
+
+<h4>Searching an Array</h4>
+
+<h4>Sorting Arrays</h4>
+
+<h4>Array Class</h4>
+
+<h4>Commandline Arguments</h4>
+-->
 
 
 <h2>Lab Exercises</h2>
