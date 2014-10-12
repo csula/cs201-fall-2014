@@ -182,25 +182,79 @@ for (double e: myList) {
 }
 </pre></div>
 
-<!--
 <h4>Variable Length Array List</h4>
+
+<p>A variable number of arguments of the same type can be passed to a method and treated as an array.</p>
+
+<img src="varargs.png" /> <br/>
+
+<p>Java treats a variable-length parameter as an array. You can pass an array or a variable number of arguments to a variable-length parameter. When invoking a method with a variable number of arguments, Java creates an array and passes the arguments to it.</p>
 
 <h4>Searching an Array</h4>
 
+<p>Searching is the process of looking for a specific element in an array—for example, discovering whether a certain score is included in a list of scores.</p>
+
+<ul>
+  <li>Linear Search: one element at a time.  Time to search an array of size $n$ is $O(n)$ </li>
+  <li>Binary Search: Binary search is the other common search approach for a list of values. For binary search to work, the elements in the array must already be ordered. The time to do binary search is $O(log_2 n)$</li>
+</ul>
+
+<p>If an array is sorted, binary search is more efficient than linear search for finding an element in the array.</p>
+
+<img src="binary1.png" /> <br/>
+
+<img src="binary2.png" /> <br/>
+
+<p>Binary Search Algorithm</p>
+
+<img src="binary3.png" /> <br/>
+
 <h4>Sorting Arrays</h4>
+
+<p> Sorting, like searching, is a common task in computer programming. Many different algorithms have been developed for sorting. This section introduces an intuitive sort- ing algorithm: selection sort.</p>
+
+<img src="selectionsort1.png" /> <br/>
+
+<p>Selection Sort Algorithm</p>
+
+<img src="selectionsort2.png" /> <br/>
 
 <h4>Array Class</h4>
 
-<h4>Commandline Arguments</h4>
--->
+<p>The java.util.Arrays class contains useful methods for common array operations such as sorting and searching.</p>
 
+<div class="code"><pre>
+double[] numbers = {6.0, 4.4, 1.9, 2.9, 3.4, 3.5}; 
+java.util.Arrays.sort(numbers); // Sort the whole array 
+java.util.Arrays.parallelSort(numbers); // Sort the whole array
+
+char[] chars = {'a', 'A', '4', 'F', 'D', 'P'}; 
+java.util.Arrays.sort(chars, 1, 3); // Sort part of the array 
+java.util.Arrays.parallelSort(chars, 1, 3); // Sort part of the array
+</pre></div>
+
+<h4>Commandline Arguments</h4>
+
+<p>You can pass strings to a main method from the command line when you run the program.</p>
+
+<div class="code"><pre>
+java lab 1 2 3
+</pre></div>
+
+<p>TO extract arguments in your program, we refer the arguments as: </p>
+
+<div class="code"><pre>
+  String a = args[0];
+  String b = args[1];
+  String c = args[2];
+</pre></div>
 
 <h2>Lab Exercises</h2>
 
 <p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
 
 <ol>
-  <li></li> 
+  <li>Write a program that reads words into array of String</li> 
 </ol>
 
 </div>
