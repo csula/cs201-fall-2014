@@ -7,6 +7,10 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+# Homework 3
+
+It's pretty clear that an unorganized shopping list makes it really hard to shop.  Your recipe generator now needs to do some.
+
 # Homework 2
 
 For this homework assignment, we will expand on our recipe builder.  As you can see that hardcoding the ingredient into a recipe is not a practical way to build your recipe builder.  Instead we will feed (no puns intended) the recipe builder with a list of ingredients which can be listed in a file.
@@ -17,7 +21,7 @@ Strawberries
 0.50 kg
 Bananas
 1 piece
-Greek Yogur
+Greek Yogurt
 10 ounces
 ==end==
 ```
