@@ -18,6 +18,12 @@ Greek Yogurt (ounces)   10              20              50
 Strawberries (kg)       5               1.0             2.5
 ```
 
+You will run program the same way as before:
+
+```
+java -jar hw3.jar < ingredient.txt
+```
+
 
 # Homework 2
 
