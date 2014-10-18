@@ -11,25 +11,152 @@
 
 <h1>CS201: Introduction to Programming</h1>
 
-<h2>Lecture 8</h2>
-
+<h2>Lecture 8 / Multidimensional Arrays</h2>
 <p>Reading assignment: chapter 8</p>
 
-<h3>Lesson Objectives</h3>
+<h2>Lesson Objectives</h2>
 <ul>
-  <li></li>
+  <li>To give examples of representing data using two-dimensional arrays </li>
+  <li>To declare variables for two-dimensional arrays, create arrays, and access array elements in a two-dimensional array using row and column indexes </li>
+  <li>To program common operations for two-dimensional arrays (displaying arrays, summing all elements, finding the minimum and maximum elements, and random shuffling) </li>
+  <li>To pass two-dimensional arrays to methods </li>
+  <li>To use multidimensional arrays </li>
 </ul>
 
+<h3>Introduction</h3>
 
-<h2>Lab Exercises</h2>
+<p>Data in a table or a matrix can be represented using a two-dimensional array.
+The preceding chapter introduced how to use one-dimensional arrays to store linear collections of elements. You can use a two-dimensional array to store a matrix or a table. </p>
 
-<p>For each of the following exercises, practice developing and running your program with Eclispe.  Note that the lab assignments are not graded.</p>
+<img src="table.png" /><br />
 
-<ol>
-  <li></li> 
-</ol>
+<p>To represent the above table as a two-dimensional array, we'd have the following:</p>
 
+<div class="code"><pre>
+double[][] distances = {
+  {0, 983, 787, 714, 1375, 967, 1087}, 
+  {983, 0, 214, 1102, 1763, 1723, 1842}, 
+  {787, 214, 0, 888, 1549, 1548, 1627}, 
+  {714, 1102, 888, 0, 661, 781, 810}, 
+  {1375, 1763, 1549, 661, 0, 1426, 1187}, 
+  {967, 1723, 1548, 781, 1426, 0, 239}, 
+  {1087, 1842, 1627, 810, 1187, 239, 0},
+};
+</pre></div>
+
+<p>An element in a two-dimensional array is accessed through a row and column index. For example:</p>
+
+<div class="code"><pre>
+  int MiamiNewyork = distances[2][4];
+</pre></div>
+
+<div class="task">
+Write a java program that computes that prints out the longest and shortest distance between two cities.
 </div>
+
+
+<p>To create a two-dimensional array, we use the <strong>new</strong> operator:</p>
+
+<div class="code"><pre>
+  int[][] matrix = new int[5][5];
+</pre></div>
+
+<p>A two-dimensional array is actually an array in which each element is a one-dimensional array. To get the length of an array, we access using the <strong>.length</strong> variable for each dimension. </p>
+
+<img src="arraylength.png" /><br />
+
+<div class="code"><pre>
+  int[][] matrix = new int[3][4];
+  int numRow = matrix.length;
+  int numCol = matrix[0].length; 
+</pre></div>
+
+<p>In the above example we assume that all rows have the same number of columns, so we pick the size of the first row.  However, it is possible to have a <em>ragged array</em>.  For eample:</p>
+
+<img src="ragged.png" /><br />
+
+<p>And the corresponding code is:</p>
+
+<div class="code"><pre>
+int[][] triangleArray = new int[5][]; 
+triangleArray[0] = new int[5]; 
+triangleArray[1] = new int[4]; 
+triangleArray[2] = new int[3]; 
+triangleArray[3] = new int[2]; 
+triangleArray[4] = new int[1];
+</pre></div>
+
+<div class="task">
+Write the Java code to create a matrix multiplcation table and write a code to print the multiplication table.
+</div>
+
+<h3>Common Two-dimensional Array Patterns</h3>
+
+<h4>Initializing arrays with input values</h4>
+
+<h4>Initializing arrays with random values</h4>
+
+<h4>Print arrays</h4>
+
+<h4>Summing all elements</h4>
+
+<h4>Summing elements by column</h4>
+
+<h4>Which row has the largest sum</h4>
+
+<h4>Random shuffling</h4>
+
+<h3>Passing Arrays to Methods as Parameters</h3>
+
+<p>Where as before, when we first discussed parameters passing, our focus was on "pass by value" (e.g. passing <em>primitive</em> data type), we no focus on passing arrays as parameters.  It's important to recognize that arrays are <strong>passed by reference</strong>.</p>
+
+<p>Passing by reference can result in changing the values of the referenced arrays.</p>
+
+<div class="code"><pre>
+public class PassByReference {
+   public static doubleArray(double[] array) {
+     for (int i = 0; i < array.length; i++) {
+        array[i] *= 2.0;
+     }
+   }
+
+   public static void main(String[] args) {
+     double[] array = { 1.0, 2.0, 3.0 };
+     for (double a : array) {
+        System.out.println( a );
+     }
+     doubleArray( array );
+     for (double a : array) {
+        System.out.println( a );
+     }
+   }
+}
+</pre></div> 
+
+<div class="task">
+Add to the code a method that would reverse the order of an array.
+</div>
+
+<h3>Multidimensional Arrays</h3>
+
+<p>A two-dimensional array consists of an array of one-dimensional arrays and a three-dimensional array consists of an array of two-dimensional arrays.</p>
+
+<div class="code"><pre>
+double[][][] scores = {
+   {{7.5, 20.5}, {9.0, 22.5}, {15, 33.5}, {13, 21.5}, {15, 2.5}},
+   {{4.5, 21.5}, {9.0, 22.5}, {15, 34.5}, {12, 20.5}, {14, 9.5}},
+   {{6.5, 30.5}, {9.4, 10.5}, {11, 33.5}, {11, 23.5}, {10, 2.5}},
+   {{6.5, 23.5}, {9.4, 32.5}, {13, 34.5}, {11, 20.5}, {16, 7.5}},
+   {{8.5, 26.5}, {9.4, 52.5}, {13, 36.5}, {13, 24.5}, {16, 2.5}},
+   {{9.5, 20.5}, {9.4, 42.5}, {13, 31.5}, {12, 20.5}, {16, 6.5}}
+};
+</pre></div>
+
+<div class="task">
+Write a java program that sums up the values the three-dimensional <strong>scores</strong> array above.
+</div>
+
+</div> <!-- contennt -->
 
 <div id="footer">
 All illustrations are courtesy of Y. Daniel Liang's <em>Introduction to Java Programming, 10e</em>.
