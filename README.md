@@ -7,6 +7,22 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+# Homework 4
+
+Your homework task is to "redo" homework 2 and 3.  This time you will design three classes: `Recipe`, `Ingredient`, and `Instruction`.  You will now have a main application `App` this application is the driver for your program (we will cover this more in class).
+
+Obviously your instruction class is much more complicated so we won't implement it this homework assignment.  Instead you can simply create an `Instruction.java` file as followed:
+
+```
+class Instruction {
+  private int step;
+  private String task;
+  private int nextStep;
+} 
+```
+
+Your homework is due: 8 November 2014. 
+
 # Homework 3
 
 It's pretty clear that an unorganized shopping list makes it really hard to shop.  Your recipe generator will now need to sort the output by ingredients.  So the output would be as followed
