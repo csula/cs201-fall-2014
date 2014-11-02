@@ -9,7 +9,7 @@ For this class, the homework assignment will be a recipe generator.  Each week, 
 
 # Homework 4
 
-Your homework task is to "redo" homework 2 and 3.  This time you will design three classes: `Recipe`, `Ingredient`, and `Instruction`.  You will now have a main application `App` this application is the driver for your program (we will cover this more in class).
+Your homework task is to "redo" homework 2.  This time you will design three classes: `Recipe`, `Ingredient`, and `Instruction`.  You will now have a main application `App` this application is the driver for your program (we will cover this more in class).
 
 Obviously the `Instruction` class is much more complicated so we won't implement it this homework assignment.  Instead you can simply create an `Instruction.java` file as followed:
 
@@ -29,7 +29,9 @@ So now you will have to consider some relationships:
 5. Application has more than one recipe
 6. Each Recipe is built using a text file
 
-Your homework is due: 8 November 2014. 
+Note that you do not need to implement the sort functionality for this assignment.  
+
+Your homework is due: 2 November 2014.  If you need more time let me know. 
 
 # Homework 3
 
