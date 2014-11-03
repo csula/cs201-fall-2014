@@ -7,7 +7,31 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
-# Homework 4
+# Homework 4 (CS201 Section)
+
+Let us assume the following information:
+
+1. A string can be splitted into an array of string:
+
+```
+String[] array = "this is a string".split("\\s+");
+```
+
+In the above example, "this is string" is splitted into 4 words (separated by a white space `\\s+`.
+
+2. We've learned how to read contents of a for our recipe reading assignment (homework 2).
+
+For this homework assignment given a text file.  Read in the content of the text file and printout the total number of words found in your document.
+
+To run the program you'd do the following:
+
+```
+java -jar hw4.jar < textfile.txt
+```
+
+Your program should then print out the total number of words found in `textfile.txt`
+
+# Homework 4 (CS202 Section)
 
 Your homework task is to "redo" homework 2.  This time you will design three classes: `Recipe`, `Ingredient`, and `Instruction`.  You will now have a main application `App` this application is the driver for your program (we will cover this more in class).
 
