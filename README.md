@@ -7,6 +7,35 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+# Homework 5 (CS201 Section)
+
+Consider lab 11 and answer the following questions.
+
+"the quick brown fox jumps over the lazy dog"
+
+1. Write a program that finds the shortest word and print it out along with the word's length
+
+   java -jar shortestword.jar < textfile.txt 
+
+2. Write a program that finds all the shortest words and print them out
+
+3. Write a program that prints out the first two shortest words
+
+4. Do at home: 
+   (a) repeat for longest words
+   (b) print out the shortest words but only once
+
+5. Write a program that sorts the words of the line and print them out in alphebetical order
+
+6. Write a program that prints out the words in an array only once (hint: sort it first)
+
+7. Write a program that prints each word of an array and how many times that word appears!
+
+8. Do at home:
+   (a) repeat #7 but use nested loops
+
+For homework assignment, only do question 4b and 8a.
+
 # Homework 4 (CS201 Section)
 
 Let us assume the following information:
