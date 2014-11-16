@@ -34,7 +34,7 @@ Consider lab 11 and answer the following questions.
 8. Do at home:
    (a) repeat #7 but use nested loops
 
-For homework assignment, only do question 4b and 8a.
+For homework assignment, only do questions 4b and 8a.
 
 # Homework 4 (CS201 Section)
 
