@@ -162,8 +162,8 @@ public class TalesOfTwoCities {
 
         /*
          * test to see if the two states are neighbors
-         * a state is a neighbor if there they have one or more cities
-         * that are neighbors
+         * States are neighbors if they have cities that are neighbors
+         * 
          */
 
         System.out.println(Pennsylvania + " and " + NewYorkState + " are neighbors: " + Pennsylvania.isNeighbor( NewYorkState ));
