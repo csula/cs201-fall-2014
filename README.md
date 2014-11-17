@@ -7,6 +7,32 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+# Homework 6 (CS201 Section)
+
+Generate two random arrays (similar to above)
+
+1. Determine if the arrays have at least one element in common (we did this problem in class)
+
+*Do this for homework*
+
+2. Identify *all* of the common elements between the  two arrays 
+
+3. Create a plot of the following random number generator code:
+
+(a) vary your max values from 50 to 200 
+
+(b) for each max run 100 times, count up the number of trues.  
+
+   x = max (50, 51, 52, ... 200)
+   f(x) = count of trues
+
+For example:
+
+```
+  f(50) = # count true
+  f(51) = # count true
+```
+
 # Homework 5 (CS201 Section)
 
 Consider lab 11 and answer the following questions.
