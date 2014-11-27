@@ -7,6 +7,11 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+
+# Homework 5 (CS202 Section)
+
+Your program will read in the recipe and display it as a GUI.  Your gui will be able to give the user the ability to select how many users to serve.  As the number of users to be served is changed the quantity for each ingredient is updated accordingly.  Please demo this program in class.
+
 # Homework 6 (CS201 Section)
 
 Generate two random arrays (similar to above)
