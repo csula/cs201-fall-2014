@@ -11,55 +11,55 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class GuiDemo extends JFrame {
-	JTextField textField;
-	
-	public GuiDemo() {
-		// set frame properties
-		setTitle("boring app");
-		setLayout( new FlowLayout() );
-		setSize(400, 400);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JTextField textField;
 
-		// create buttons
-		JButton button = new JButton("Ok");
-		JButton anotherButton = new JButton("Another Button");
+    public GuiDemo() {
+        // set frame properties
+        setTitle("boring app");
+        setLayout( new FlowLayout() );
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// create a label
-		JLabel label = new JLabel("press something");
-		
-		// create a text field
-		textField = new JTextField("type your name here");
-		
-		JPanel p1 = new JPanel();		// create a panel
-		p1.add(textField);
-		p1.add(button); // add button to panel
-		p1.add(anotherButton); // add button to panel
+        // create buttons
+        JButton button = new JButton("Ok");
+        JButton anotherButton = new JButton("Another Button");
 
-		button.addActionListener( new OkAction() );
-		anotherButton.addActionListener( new AnotherAction() );
-		
-		getContentPane().add( p1 ); // add panel to frame
-		
-		/* at the end */
-		
-		setVisible(true);
-	}
-	
-	class AnotherAction implements ActionListener {
-		public void actionPerformed(ActionEvent arg0) {
-			String message = textField.getText();
-			System.out.println("hello " + message);
-		}
-	}
-	
-	public static void main(String[] args) {
-		new GuiDemo();
-	}
+        // create a label
+        JLabel label = new JLabel("press something");
+
+        // create a text field
+        textField = new JTextField("type your name here");
+
+        JPanel p1 = new JPanel();		// create a panel
+        p1.add(textField);
+        p1.add(button); // add button to panel
+        p1.add(anotherButton); // add button to panel
+
+        button.addActionListener( new OkAction() );
+        anotherButton.addActionListener( new AnotherAction() );
+
+        getContentPane().add( p1 ); // add panel to frame
+
+        /* at the end */
+
+        setVisible(true);
+    }
+
+    class AnotherAction implements ActionListener {
+        public void actionPerformed(ActionEvent arg0) {
+            String message = textField.getText();
+            System.out.println("hello " + message);
+        }
+    }
+
+    public static void main(String[] args) {
+        new GuiDemo();
+    }
 }
 
 class OkAction implements ActionListener {
-	public void actionPerformed(ActionEvent event) {
-		System.out.println("you pressed the \"Ok\" button");
-	}
-	
+    public void actionPerformed(ActionEvent event) {
+        System.out.println("you pressed the \"Ok\" button");
+    }
+
 }
