@@ -52,9 +52,16 @@ public class Canvas extends JPanel {
 	}
 	
 	protected void paintComponent(Graphics pen) {
+		super.paintComponent(pen);
+		
 		for (Circle circle : circles) {
 			pen.setColor( circle.color );
 			pen.fillOval(circle.x, circle.y, circle.r, circle.r);
 		}
+	}
+
+	public void clear() {
+		circles.clear();
+		update();
 	}
 }
