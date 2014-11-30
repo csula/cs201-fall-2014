@@ -1,6 +1,5 @@
 package lab14;
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -14,10 +13,9 @@ public class MainApp extends JFrame {
 		controlPanel = new ControlPanel();
 		
 		controlPanel.setCanvas( canvas );
+		
 		add( canvas );
 		add( controlPanel );
-
-		
 	}
 	
 	static public void main(String[] args) {
