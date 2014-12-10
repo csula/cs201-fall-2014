@@ -7,6 +7,24 @@ One of the goals for this course is to develop good software engineering skills.
 
 For this class, the homework assignment will be a recipe generator.  Each week, we will build homework assignments that will apply the theories we've learned in the classroom and build a sub-system to our larger recipe generator system.
 
+# Project (CS202 Section)
+
+Your project is to update Homework 5.  For many of you, the current implementation is that the entire recipe is displayed in one text box.  While this is Ok (for the homework assignment) it's simply not ready for primetime.  To this end, you will need to modify your assignment so that you'll use `JLabel` along with other Java Gui classes.
+
+In addition to the ingredient listing, your program will also have to list the cooking instruction (more details below).
+
+Finally, your program's data must be object-oriented.  You simply cannot simply solve the solution with arrays of data.
+
+_In summary_ your program will have the following features:
+
+1. Number of people to serve
+2. List of ingredients: each ingredient will have name, quantity, unit and a `checkbox` object.  The checkbox object is to indicate that the item has been purchased.  There is no action associated with the checkbox.
+3. List of steps (cooking instruction). Note that he format of the instruction is up to you to design but you must read the instruction from file and cannot be hard-coded.
+4. You will have to have 3 panels: (1) control panel which includes how many people and an `update` button (2) ingredients panel, and (3) instruction panel
+5. The instruction steps will each have instruction and a `radio` button.  This is to show that the cook is on that step.
+
+Your project must look good.  Simply put you cannot simply slap something together to show that you are done with the assignment.  I would recommend that you spend at least 10 hours on the assignment to make the project look perfect.
+
 
 # Homework 5 (CS202 Section)
 
